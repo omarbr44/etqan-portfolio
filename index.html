@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itqan PRO - A bank with you in mind</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,7 +17,7 @@
     extend: {
       colors:{
         "site-shapes": "#014c7d",
-        "site-text-primary": "#121519",
+        "site-text-primary": "#014c7d",
         "site-text-secondary": "#596373",
       }
     },
@@ -31,10 +37,9 @@
   },
         }
       </script>
-    <title>Document</title>
 </head>
 <body>
-    <nav class="bg-site-shapes lg:py-8 py-4 px-16 sm:px-6 flex justify-between w-full fixed top-0 z-10">
+    <nav class="bg-gradient-to-r from-site-shapes to-cyan-600 lg:py-8 py-4 px-16 sm:px-6 flex justify-between w-full fixed top-0 z-10" data-aos="fade-up">
         <div class="flex items-center ">
             <a href="" class=" bg-white p-2 rounded-lg">
                 <img src="img/logo.png" alt="logo" width="120">
@@ -85,24 +90,178 @@
             </div>
         </section>
     </nav>
-    <section class="hero-section h-screen bg-site-shapes lg:mt-0 mt-10">
-        <div class="hero-content flex lg:flex-row flex-col-reverse justify-between items-center text-center lg:text-left
-                    lg:pt-48 lg:px-28 py-10 sm:gap-10 md:gap-5">
-            <div class="hero-heading-container w-2/3">
+    <section class="hero-section h-screen bg-gradient-to-r from-site-shapes to-cyan-600 lg:mt-0 mt-10">
+        <div class="hero-content  flex lg:flex-row flex-col-reverse justify-between items-center text-center lg:text-left
+                    lg:pt-40 lg:px-28 py-10 sm:gap-10 md:gap-5 lg:h-full">
+            <div class="hero-heading-container w-2/3" data-aos="fade-up" data-aos-delay="300">
                 <h1 class="text-white text-7xl md:text-6xl sm:text-3xl font-bold mb-10">A bank with you in mind.</h1>
-                <button class=" bg-white text-site-shapes px-28 py-3 sm:px-24 text-center rounded-lg">Join the Waitlist</button>
+                <button class="bg-white text-site-shapes px-28 py-3 sm:px-24 text-center rounded-lg shadow-md">Join the Waitlist</button>
             </div>
-            <div class="hero-img">
-                <img alt="Phone with installed D360 app"
-                    src="img/phone.png"
+            <div class="hero-img" data-aos="fade-up" data-aos-delay="300">
+                <img alt="bank building"
+                    src="img/bank-building.png"
                     loading="lazy"
                     style="color: transparent;"
-                    class="w-60 h-80">
+                    class="lg:w-96 lg:h-96 w-60 h-60">
             </div>
         </div>
     </section>
+    <div class="hero-shapes-container absolute inset-0 h-screen overflow-hidden" data-aos="zoom-in" data-aos-delay="500">
+      <div class="hero-shapes-holder relative w-full h-full bg-transparent">
+        <img class="hero-shape h-32 top-28" src="img/ball-split.png" alt="object">
+        <img class="hero-shape hero-shape-blur h-64 top-14 -right-32" src="img/ball-split.png" alt="object">
+        <img class="hero-shape hero-shape-blur h-24 bottom-28 right-96" src="img/ball-split.png" alt="object">
+        <img class="hero-shape hero-shape-blur h-24 bottom-36 right-80" src="img/basic-gem.png" alt="object">
+        <img class="hero-shape h-32 top-32 right-24 " src="img/basic-gem.png" alt="object">
+        <img class="hero-shape h-44 bottom-10 left-72" src="img/basic-gem.png" alt="object">
+        <img class="hero-shape h-36 top-64 left-96" src="img/bulge-faced-hexagon.png" alt="object">
+        <img class="hero-shape hero-shape-blur h-28 top-36 right-96" src="img/bulge-faced-hexagon.png" alt="object">
+      </div>
+    </div>
+    <section class="why-section h-screen sm:h-[60vh] bg-white flex items-center justify-center">
+        <h1 class="text-center text-8xl md:text-7xl sm:text-5xl font-bold text-site-primary leading-[7rem]">
+          Why
+          <br>
+          <span class="gradient-text">ITQAN PRO</span>
+        </h1>
+        <h1
+         style="font-size: 31vw;"
+        class="text-8xl font-bold text-site-primary w-full absolute opacity-5">ITQAN</h1>
+    </section>
+    <div class="stepper-section-container pb-52">
+        <section class="stepper-section flex sm:flex-col-reverse justify-evenly lg:px-28">
+            <div class="stepper-container sm:hidden flex flex-col items-center w-1/6">
+                <div class="stepper-circle stepper-circle-checked"></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-circle"></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-circle"></div>
+                <div class="stepper-line"></div>
+                <div class="stepper-circle"></div>
+            </div>
+            <div class="text-stepper-container self-start sm:ml-4 sm:w-5/6 w-3/6">
+                <div class="text-stepper-container-1">
+                    <h1 class="text-7xl md:text-6xl sm:text-5xl text-site-primary font-bold mb-5">Flexible</h1>
+                    <p class="text-2xl sm:text-lg text-site-secondary">Our services are designed to meet your
+                        specific needs and are accessible anytime, anywhere
+                    </p>
+                </div>
+            </div>
+            <div class="img-stepper-container self-end sm:mr-4 flex flex-col items-center w-2/6">
+               <img class="w-72 img-stepper-container-1" src="img/directions.png" alt="directions">
+               <img class="w-72 hidden img-stepper-container-2" src="img/secure-data.png" alt="secure">
+               <img class="w-72 hidden img-stepper-container-3" src="img/transparency.png" alt="transparency">
+               <img class="w-72 hidden img-stepper-container-4" src="img/deadline.png" alt="deadline">
+            </div>
+        </section>
+    </div>
+    <section class="faq-section bg-[#f6f7f8] py-20">
+        <div class="faq-conatiner bg-white mx-16 sm:mx-6 px-16 py-6 rounded-lg">
+            <h1 class="text-6xl sm:text-5xl font-bold gradient-text absolute" style="transform: translate(10px, -60px);">FAQs</h1>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+            <div class="details">
+                <details class="details__container">
+                  <summary class="details__summary">
+                    <h2 class="details__title text-3xl sm:text-xl">Is D360 Bank a licensed bank in Saudi Arabia?</h2>
+                  </summary>
+                </details>
+                <div class="details__desc">
+                  <div class="details__desc-inner text-base text-gray-600">
+                    D360 Bank is licensed by the Council of Ministers Resolution and subject to the supervision of the Saudi Central Bank.                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div  class="qr-container fixed bottom-4 right-24 p-3 bg-white flex justify-around items-center w-64 h-32
+               rounded-lg sm:hidden" 
+          data-aos="fade-up"
+          data-aos-delay="600"
+    >
+      <div class="qr-text-container">
+        <p class="text-site-text-secondary">Dowmload</p>
+        <p class="text-site-text-primary font-bold">Itqan PRO</p>
+      </div>
+      <img src="img/qr.svg" alt="qr" class="h-full">
+    </div>
+    <footer class="bg-white lg:px-32 px-8 mt-10">
+      <div class="footer-links-container flex lg:flex-row flex-col gap-8 justify-evenly items-start lg:items-center">
+        <a href="" class="text-site-text-secondary">Security Awareness</a>
+        <div class="w-px h-3 bg-site-text-secondary hidden lg:block"></div>
+        <a href="" class="text-site-text-secondary">Privacy Notice</a>
+        <div class="w-px h-3 bg-site-text-secondary hidden lg:block"></div>
+        <a href="" class="text-site-text-secondary">Careers</a>
+        <div class="w-px h-3 bg-site-text-secondary hidden lg:block"></div>
+        <a href="" class="text-site-text-secondary">Contact Us</a>
+        <div class="w-px h-3 bg-site-text-secondary hidden lg:block"></div>
+        <a href="" class="text-site-text-secondary">Customer Protection Principles</a>
+        <div class="w-px h-3 bg-site-text-secondary hidden lg:block"></div>
+        <a href="" class="text-site-text-secondary">Report a Complaint</a>
+      </div>
+      <div class="footer-follow-us-container my-20 lg:text-center lg:py-0 py-8 md:border-y sm:border-y">
+        <a href="" class="text-site-text-secondary text-lg font-bold">Follow us</a>
+      </div>
+      <div class="footer-logo-container">
+        <img src="img/logo.png" alt="logo" class="w-36 mx-auto">
+      </div>
+      <p class="text-site-text-secondary text-sm text-center my-5">All rights reserved © Itqan Pro</p>
+    </footer>
 </body>
 <script>
+    AOS.init();
     function showHideNav() {
         let mobileNav = document.querySelector('#mobile-nav')
         if(mobileNav.className != 'hidden') {
@@ -112,5 +271,50 @@
             mobileNav.className = 'block'
         }
     }
+    document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(ScrollTrigger)
+        const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.stepper-section',
+      pin: true,
+      anticipatePin: 1,
+      scrub: 1,
+      start: "center center",
+      end: "+=600"
+    }
+  });
+  tl.add('start')
+    .to('.stepper-circle', {opacity:1,borderWidth: '5px', stagger:1.5 })
+    .to('.text-stepper-container-1 h1',{
+        textContent: 'Secure'
+    },1.5)
+    .to('.text-stepper-container-1 p',{
+        textContent: 'Guarantees the protection of your money and banking data'
+    },1.5)
+    .to('.img-stepper-container-1',{display: 'none'},1)
+    .to('.img-stepper-container-2',{display: 'block'},1.5)
+    .to('.text-stepper-container-1 h1',{
+        textContent: 'Transparenjt'
+    },3)
+    .to('.text-stepper-container-1 p',{
+        textContent: 'Clarity across all banking services ensures you won’t be hit with unexpected charges or hidden fees'
+    },3)
+    .to('.img-stepper-container-2',{display: 'none'},2.5)
+    .to('.img-stepper-container-3',{display: 'block'},3)
+    .to('.stepper-section-container',{
+        backgroundColor: '#014c7d',
+    },4.5)
+    .to('.stepper-circle', {borderColor: 'white',})
+    .to('.text-stepper-container-1 h1',{
+        color: 'white',
+        textContent: 'Fast'
+    },4.5)
+    .to('.text-stepper-container-1 p',{
+        color: 'white',
+        textContent: 'Our commitment to promptness and efficiency means that every D banking service is completed in seconds'
+    },4.5)
+    .to('.img-stepper-container-3',{display: 'none'},4)
+    .to('.img-stepper-container-4',{display: 'block'},4.5)
+    });
 </script>
 </html>
