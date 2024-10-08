@@ -11,32 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-    extend: {
-      colors:{
-        "site-shapes": "#014c7d",
-        "site-text-primary": "#014c7d",
-        "site-text-secondary": "#596373",
-      }
-    },
-    fontFamily:{
-      Roboto: ["Roboto, sans-serif"],
-    },
-    container: {
-      padding: "0.5rem",
-      center: true,
-    },
-    screens:{
-      sm: {'max': '640px'},
-      md: {'max': '1024px',
-            'min': '640px'} ,
-      lg: '1024px',
-    }
-  },
-        }
-      </script>
+    <script src="app.js"></script>
 </head>
 <body>
     <nav class="bg-gradient-to-r from-site-shapes to-cyan-600 lg:py-8 py-4 px-16 sm:px-6 flex justify-between w-full fixed top-0 z-10" data-aos="fade-up">
@@ -49,7 +24,7 @@
                     About us
                 </a>
                 <span class="mx-4">|</span>
-                <a href="">
+                <a href="index-ar.html">
                     عربي
                 </a>
             </div>
@@ -261,61 +236,6 @@
     </footer>
 </body>
 <script>
-    AOS.init();
-    function showHideNav() {
-        let mobileNav = document.querySelector('#mobile-nav')
-        if(mobileNav.className != 'hidden') {
-            mobileNav.className = 'hidden'
-        }
-        else {
-            mobileNav.className = 'block'
-        }
-    }
-    // To initiate gsap
-    document.addEventListener("DOMContentLoaded", (event) => {
-        gsap.registerPlugin(ScrollTrigger)
-        const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '.stepper-section',
-      pin: true,
-      anticipatePin: 1,
-      scrub: 1,
-      start: "center center",
-      end: "+=600"
-    }
-  });
-  tl.add('start')
-    .to('.stepper-circle', {opacity:1,borderWidth: '5px', stagger:1.5 })
-    .to('.text-stepper-container-1 h1',{
-        textContent: 'Secure'
-    },1.5)
-    .to('.text-stepper-container-1 p',{
-        textContent: 'Guarantees the protection of your money and banking data'
-    },1.5)
-    .to('.img-stepper-container-1',{display: 'none'},1)
-    .to('.img-stepper-container-2',{display: 'block'},1.5)
-    .to('.text-stepper-container-1 h1',{
-        textContent: 'Transparenjt'
-    },3)
-    .to('.text-stepper-container-1 p',{
-        textContent: 'Clarity across all banking services ensures you won’t be hit with unexpected charges or hidden fees'
-    },3)
-    .to('.img-stepper-container-2',{display: 'none'},2.5)
-    .to('.img-stepper-container-3',{display: 'block'},3)
-    .to('.stepper-section-container',{
-        backgroundColor: '#014c7d',
-    },4.5)
-    .to('.stepper-circle', {borderColor: 'white',})
-    .to('.text-stepper-container-1 h1',{
-        color: 'white',
-        textContent: 'Fast'
-    },4.5)
-    .to('.text-stepper-container-1 p',{
-        color: 'white',
-        textContent: 'Our commitment to promptness and efficiency means that every D banking service is completed in seconds'
-    },4.5)
-    .to('.img-stepper-container-3',{display: 'none'},4)
-    .to('.img-stepper-container-4',{display: 'block'},4.5)
-    });
+  AOS.init();
 </script>
 </html>

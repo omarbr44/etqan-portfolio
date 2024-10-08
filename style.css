@@ -128,7 +128,7 @@
         position: absolute;
         border-radius: var(--radius);
         top: calc(50% - (var(--height) / 2));
-        right: calc(var(--width) / 2);
+        inset-inline-end: calc(var(--width) / 2);
         transition: all .2s ease-in-out;
       }
 
