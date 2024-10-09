@@ -201,17 +201,17 @@
         border-radius: 100%;
       }
       .swiper-button-prev {
-        left: 45% !important;
+        inset-inline-start: 45% !important;
       }
       .swiper-button-next {
-        right: 45% !important;
+        inset-inline-end: 45% !important;
       }
       @media(max-width: 890px) {
         .swiper-button-prev {
-          left: 42% !important;
+          inset-inline-start: 42% !important;
         }
         .swiper-button-next {
-          right: 42% !important;
+          inset-inline-end: 42% !important;
         }
       }
       .swiper-button-prev::after,.swiper-button-next::after {
