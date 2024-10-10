@@ -32,4 +32,22 @@ tailwind.config = {
             mobileNav.className = 'block'
         }
     }
+    function showWaitlistModal() {
+        let waitlistModal = document.querySelector('#wait-list-section')
+        if(waitlistModal.className != 'hide-wait-list-section') {
+            waitlistModal.className = 'hide-wait-list-section'
+        }
+        else {
+            waitlistModal.className = 'show-wait-list-section'
+        }
+    }
+    function showJoinWaitlistModal() {
+        let waitlistModal = document.querySelector('#join-wait-list-section')
+        if(waitlistModal.className != 'hide-wait-list-section') {
+            waitlistModal.className = 'hide-wait-list-section'
+        }
+        else {
+            waitlistModal.className = 'show-wait-list-section'
+        }
+    }
     

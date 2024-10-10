@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="lg:flex items-center hidden">
-            <a href="" class="text-white waitlist-container text-xl ml-8">حالة الانتظار</a>
+            <button onclick="showWaitlistModal()" class="text-white waitlist-container text-xl ml-8">حالة الانتظار</button>
             <a href="" class="bg-white px-8 py-2 text-xl text-site-shapes rounded-xl">حمل التطبيق</a>
         </div>
         <button type="button" onclick="showHideNav()" class="nav-button lg:hidden relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
@@ -66,11 +66,88 @@
                 </div>
                 <div class="flex flex-col gap-5 w-full text-center mb-8">
                     <a href="" class="text-xl w-full bg-site-shapes text-white rounded-xl py-3">حمل التطبيق</a>
-                    <a style="border: 1px solid;" href="" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">حالة الانتظار</a>
+                    <button onclick="showWaitlistModal()" style="border: 1px solid;" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">حالة الانتظار</button>
                 </div>
             </div>
         </section>
     </nav>
+    <section id="wait-list-section" class="hide-wait-list-section" style="z-index: 50; position: relative;">
+      <section class="h-screen w-full bg-[#e7e9ec] fixed top-0 left-0 ">
+        <nav class="bg-white lg:py-8 py-4 px-16 sm:px-6 w-full flex justify-between mb-10" 
+           data-aos="fade-up" data-aos-duration="1500">
+          <div class="flex items-center ">
+              <a href="" class="p-2 rounded-lg">
+                  <img src="../img/logo.png" alt="logo" width="120">
+              </a>
+              <div class="ml-8 text-xl text-site-text-secondary lg:block hidden">
+                  <a href="about-us.html">
+                      About us
+                  </a>
+                  <span class="mx-4">|</span>
+                  <a href="index-ar.html">
+                      عربي
+                  </a>
+              </div>
+          </div>
+          <button type="button" onclick="showWaitlistModal()" class="nav-button relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <section id="mobile-nav" class="hidden">
+              <div class="flex items-center justify-between h-1/6">
+                  <a href="" >
+                      <img src="../img/logo.png" alt="logo" width="110">
+                  </a>
+                  <button type="button" onclick="showHideNav()" class="nav-button lg:hidden relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+                      <span class="absolute -inset-0.5"></span>
+                      <span class="sr-only">Open main menu</span>
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+              </div>
+              <!-- <div class="flex flex-col justify-between h-5/6">
+                  <div class="text-2xl text-site-primary flex flex-col gap-7 mt-1">
+                      <a href="about-us.html">About Us</a>
+                      <a href="">عربي</a>
+                  </div>
+                  <div class="flex flex-col gap-5 w-full text-center mb-8">
+                      <a href="" class="text-xl w-full bg-site-shapes text-white rounded-xl py-3">Download The App</a>
+                      <button onclick="showWaitlistModal()" style="border: 1px solid;" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">Waitlist Status</button>
+                  </div>
+              </div> -->
+          </section>
+      </nav>
+        <div class="flex justify-between items-center px-16 sm:px-6">
+          <div class="info-container w-4/5">
+            <h1 class="text-8xl sm:text-5xl font-bold text-site-shapes">ترتيبك
+              في قائمة الانتظار</h1>
+            <form action="">
+              <p  class="text-xl sm:text-lg my-5">أدخل رقم جوالك لمعرفة ترتيبك في القائمة
+              </p>
+              <label class="block text-site-text-secondary" for="phone">رقم الجوال
+              </label>
+              <div class="relative w-fit">
+                <p class="absolute p-5 -left-2 text-xl sm:text-lg z-10">+966</p>
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  class="bg-[#e7e9ec] text-xl sm:text-lg p-5 border-b-2 border-site-text-secondary pl-16"
+                  pattern="[0-9\-\+\(\)\s]+"
+                  maxLength="9"
+                  minLength="9"
+                  placeholder="5X XXX XXXX">
+              </div>
+                <button type="submit" class="block w-72 py-1 text-lg font-bold rounded-lg bg-site-shapes text-white mt-4">التالي</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
     <section class="about-us-hero-section relative h-screen">
         <div class="hero-content absolute top-1/2 -translate-y-1/2 text-center w-full">
             <h1 class="text-white text-6xl md:text-5xl sm:text-4xl font-bold mb-10">اتقان برو</h1>

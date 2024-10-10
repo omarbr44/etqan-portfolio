@@ -14,7 +14,7 @@
     <script src="../app.js"></script>
 </head>
 <body>
-    <nav class="bg-gradient-to-r from-site-shapes to-cyan-600 lg:py-8 py-4 px-16 sm:px-6 flex justify-between w-full fixed top-0 z-10" 
+    <nav class="bg-gradient-to-r from-site-shapes to-cyan-600 lg:py-8 py-4 px-16 sm:px-6 flex justify-between w-full fixed top-0 z-[39]" 
          data-aos="fade-up" data-aos-duration="1500">
         <div class="flex items-center ">
             <a href="" class=" bg-white p-2 rounded-lg">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="lg:flex items-center hidden">
-            <a href="" class="text-white text-xl mr-8">Waitlist Status</a>
+            <button class="text-white text-xl mr-8" onclick="showWaitlistModal()">Waitlist Status</button>
             <a href="" class="bg-white px-8 py-2 text-xl text-site-shapes rounded-xl">Download The App</a>
         </div>
         <button type="button" onclick="showHideNav()" class="nav-button lg:hidden relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
@@ -61,17 +61,177 @@
                 </div>
                 <div class="flex flex-col gap-5 w-full text-center mb-8">
                     <a href="" class="text-xl w-full bg-site-shapes text-white rounded-xl py-3">Download The App</a>
-                    <a style="border: 1px solid;" href="" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">Waitlist Status</a>
+                    <button style="border: 1px solid;" onclick="showWaitlistModal()" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">Waitlist Status</button>
                 </div>
             </div>
         </section>
     </nav>
+    <section id="wait-list-section" class="hide-wait-list-section" style="z-index: 40; position: relative;">
+      <section class="h-screen w-full bg-[#e7e9ec] fixed top-0 left-0 ">
+        <nav class="bg-white lg:py-8 py-4 px-16 sm:px-6 w-full flex justify-between mb-10" 
+           data-aos="fade-up" data-aos-duration="1500">
+          <div class="flex items-center ">
+              <a href="" class="p-2 rounded-lg">
+                  <img src="../img/logo.png" alt="logo" width="120">
+              </a>
+              <div class="ml-8 text-xl text-site-text-secondary lg:block hidden">
+                  <a href="about-us.html">
+                      About us
+                  </a>
+                  <span class="mx-4">|</span>
+                  <a href="index-ar.html">
+                      عربي
+                  </a>
+              </div>
+          </div>
+          <button type="button" onclick="showWaitlistModal()" class="nav-button relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <section id="mobile-nav" class="hidden">
+              <div class="flex items-center justify-between h-1/6">
+                  <a href="" >
+                      <img src="../img/logo.png" alt="logo" width="110">
+                  </a>
+                  <button type="button" onclick="showHideNav()" class="nav-button lg:hidden relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+                      <span class="absolute -inset-0.5"></span>
+                      <span class="sr-only">Open main menu</span>
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+              </div>
+              <!-- <div class="flex flex-col justify-between h-5/6">
+                  <div class="text-2xl text-site-primary flex flex-col gap-7 mt-1">
+                      <a href="about-us.html">About Us</a>
+                      <a href="">عربي</a>
+                  </div>
+                  <div class="flex flex-col gap-5 w-full text-center mb-8">
+                      <a href="" class="text-xl w-full bg-site-shapes text-white rounded-xl py-3">Download The App</a>
+                      <button onclick="showWaitlistModal()" style="border: 1px solid;" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">Waitlist Status</button>
+                  </div>
+              </div> -->
+          </section>
+      </nav>
+        <div class="flex justify-between items-center px-16 sm:px-6">
+          <div class="info-container w-2/5">
+            <h1 class="text-8xl sm:text-5xl font-bold text-site-shapes">Check Waitlist</h1>
+            <form action="">
+              <p  class="text-xl sm:text-lg my-5">Enter your phone number</p>
+              <label class="block text-site-text-secondary" for="phone">Phone number</label>
+              <p class="absolute left-0 p-5 pl-16 sm:pl-6 text-xl sm:text-lg z-10">+966</p>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                class="bg-[#e7e9ec] text-xl sm:text-lg p-5 border-b-2 border-site-text-secondary relative pl-16"
+                pattern="[0-9\-\+\(\)\s]+"
+                maxLength="9"
+                minLength="9"
+                placeholder="5X XXX XXXX">
+                <button type="submit" class="w-72 py-1 text-lg font-bold rounded-lg bg-site-shapes text-white mt-4">Next</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
+    <section id="join-wait-list-section" class="hide-wait-list-section" style="z-index: 40;position: relative;">
+      <section class="w-full bg-[#e7e9ec] fixed top-0 left-0 h-full overflow-y-scroll pb-6">
+        <nav class="bg-white lg:py-8 py-4 px-16 sm:px-6 w-full flex justify-between mb-10" 
+           data-aos="fade-up" data-aos-duration="1500">
+          <div class="flex items-center ">
+              <a href="" class="p-2 rounded-lg">
+                  <img src="../img/logo.png" alt="logo" width="120">
+              </a>
+              <div class="ml-8 text-xl text-site-text-secondary lg:block hidden">
+                  <a href="about-us.html">
+                      About us
+                  </a>
+                  <span class="mx-4">|</span>
+                  <a href="index-ar.html">
+                      عربي
+                  </a>
+              </div>
+          </div>
+          <button type="button" onclick="showJoinWaitlistModal()" class="nav-button relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <section id="mobile-nav" class="hidden">
+              <div class="flex items-center justify-between h-1/6">
+                  <a href="" >
+                      <img src="../img/logo.png" alt="logo" width="110">
+                  </a>
+                  <button type="button" onclick="showHideNav()" class="nav-button lg:hidden relative inline-flex items-center justify-center rounded-md p-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-black" aria-controls="mobile-menu" aria-expanded="false">
+                      <span class="absolute -inset-0.5"></span>
+                      <span class="sr-only">Open main menu</span>
+                      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                      </svg>
+                  </button>
+              </div>
+              <!-- <div class="flex flex-col justify-between h-5/6">
+                  <div class="text-2xl text-site-primary flex flex-col gap-7 mt-1">
+                      <a href="about-us.html">About Us</a>
+                      <a href="">عربي</a>
+                  </div>
+                  <div class="flex flex-col gap-5 w-full text-center mb-8">
+                      <a href="" class="text-xl w-full bg-site-shapes text-white rounded-xl py-3">Download The App</a>
+                      <button onclick="showWaitlistModal()" style="border: 1px solid;" class="text-xl w-full bg-white text-site-shapes border-site-shapes rounded-xl py-3">Waitlist Status</button>
+                  </div>
+              </div> -->
+          </section>
+      </nav>
+        <div class="flex justify-between items-center px-16 sm:px-6">
+          <div class="info-container w-3/5 sm:w-full">
+            <h1 class="text-8xl sm:text-5xl font-bold text-site-shapes">Join the Waitlist</h1>
+            <form action="">
+              <p  class="text-xl sm:text-lg my-5">Enter your information</p>
+              <label class="block text-site-text-secondary" for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="bg-[#e7e9ec] text-xl sm:text-lg p-5 w-full mb-5 border-b-2 border-site-text-secondary"
+                placeholder="ex. Mohammed">
+              <label class="block text-site-text-secondary" for="phone">Phone number</label>
+              <p class="absolute left-0 p-5 pl-16 sm:pl-6 text-xl sm:text-lg z-10">+966</p>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                class="bg-[#e7e9ec] text-xl sm:text-lg p-5 w-full mb-5 border-b-2 border-site-text-secondary relative pl-16"
+                pattern="[0-9\-\+\(\)\s]+"
+                maxLength="9"
+                minLength="9"
+                placeholder="5X XXX XXXX">
+                <label class="block text-site-text-secondary" for="email">Email address (optional)</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="bg-[#e7e9ec] text-xl sm:text-lg p-5 w-full border-b-2 border-site-text-secondary block mb-5"
+                placeholder="ex. Mohammed@gmail.com">
+                <input type="checkbox" name="agree">
+                <label for="agree" class="mx-2">I confirm that I have read, consent and agree to the privacy notice</label>
+                <button type="submit" class="w-full py-2 text-lg font-bold rounded-lg bg-site-shapes text-white mt-4 block">Register now</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </section>
     <section class="hero-section h-screen bg-gradient-to-r from-site-shapes to-cyan-600 lg:mt-0 mt-10">
         <div class="hero-content  flex lg:flex-row flex-col-reverse justify-between items-center text-center lg:text-left
                     lg:pt-40 lg:px-28 py-10 sm:gap-10 md:gap-5 lg:h-full">
-            <div class="hero-heading-container w-2/3" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500">
+            <div class="hero-heading-container w-2/3 relative z-[38]" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1500">
                 <h1 class="text-white text-7xl md:text-6xl sm:text-3xl font-bold mb-10">A bank with you in mind.</h1>
-                <button class="bg-white text-site-shapes py-3 w-full lg:w-1/2 text-center rounded-lg shadow-md">Join the Waitlist</button>
+                <button onclick="showJoinWaitlistModal()" class="bg-white text-site-shapes py-3 w-full lg:w-1/2 text-center rounded-lg shadow-md ">Join the Waitlist</button>
             </div>
             <div class="hero-img" data-aos="fade-up" data-aos-delay="1500" data-aos-duration="1500">
                 <img alt="bank building"
